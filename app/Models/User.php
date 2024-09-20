@@ -51,6 +51,11 @@ class User extends Authenticatable
         ];
     }
 
+    public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public static function getForm()
     {
         return [
